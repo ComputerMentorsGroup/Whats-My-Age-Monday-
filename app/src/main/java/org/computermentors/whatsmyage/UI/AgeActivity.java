@@ -16,8 +16,13 @@ public class AgeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_age);
 
+        Intent intentExtras = getIntent ();
+        int age = intentExtras.getIntExtra("age", 0);
+
         final TextView ageTextView = (TextView) findViewById(R.id.ageTextView);
         final Button backButton = (Button) findViewById(R.id.backButton);
+
+        ageTextView.setText("" + age);
 
 
         backButton.setOnClickListener(new View.OnClickListener() {
